@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Indicators</title>
+</head>
+<body>
+    <h1>Search Indicators</h1>
+    <form method="get">
+        <input type="text" name="q" placeholder="Enter search query">
+        <input type="submit" value="Search">
+    </form>
+    <ul>
+        {% for indicator in indicators %}
+            <li>{{ indicator.name }} - Value: {{ indicator.value }}</li>
+        {% empty %}
+            <li>No matching indicators found.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'indicator_list' %}">Back to Indicator List</a>
+</body>
+</html>

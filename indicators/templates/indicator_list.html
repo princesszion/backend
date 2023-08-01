@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Indicator List</title>
+</head>
+<body>
+    <h1>Indicator List</h1>
+    <ul>
+        {% for indicator in indicators %}
+            <li>{{ indicator.name }} - Value: {{ indicator.value }}</li>
+        {% empty %}
+            <li>No indicators found.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'create_indicator' %}">Create New Indicator</a>
+    <a href="{% url 'search_indicators' %}">Search Indicators</a>
+</body>
+</html>

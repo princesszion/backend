@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Indicator</title>
+</head>
+<body>
+    <h1>Delete Indicator</h1>
+    <p>Are you sure you want to delete "{{ indicator.name }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <input type="submit" value="Delete">
+    </form>
+    <a href="{% url 'indicator_list' %}">Cancel</a>
+</body>
+</html>
